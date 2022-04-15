@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+}
+
+.display {
+    background-image: url(../../image/images/bannerbackground.png);
+    height: 80vh;
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.display-info {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.search {
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    height: 35px
+}
+
+.btn {
+    background-color: rgb(240, 29, 29);
+    border-radius: 50px;
+    color: #fff;
+    height: 35px;
+    outline: none;
+}

@@ -1,8 +1,6 @@
 import React from 'react';
-import './Login.css'
 
-
-const Login = () => {
+const HeaderDisplay = () => {
     return (
         <div>
 
@@ -10,4 +8,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default HeaderDisplay;
