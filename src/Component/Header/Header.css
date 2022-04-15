@@ -1,0 +1,33 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px
+}
+
+.logo {
+    height: 33px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    /* color: #000; */
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.cart {
+    font-size: 23px;
+}
+
+.signup {
+    background: rgb(240, 29, 29);
+    padding: 7px 20px;
+    border-radius: 30px;
+    color: #fff;
+}
+
+.signup:hover {
+    background: #fff;
+    color: rgb(240, 29, 29);
+    border: 2px solid rgb(240, 29, 29);
+}
