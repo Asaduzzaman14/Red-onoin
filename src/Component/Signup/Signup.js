@@ -2,25 +2,28 @@ import React from 'react';
 import logo from '../../image/images/logo2.png'
 import './Signup.css'
 import { useCreateUserWithEmailAndPassword, useSendEmailVerification } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import { useUpdateProfile } from 'react-firebase-hooks/auth';
 
 
 
 
 const Signup = () => {
-    const [
-        createUserWithEmailAndPassword,
-        user,
-        loading,
-        error,
-    ] = useCreateUserWithEmailAndPassword(auth, { useSendEmailVerification: true });
+    const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth, { useSendEmailVerification: true });
+
+    //  send email verivication
+    const [sendEmailVerification, sending, verifyingError] = useSendEmailVerification(auth);
+
+    //   update profile
+    const [updateProfile, updating, UPdateError] = useUpdateProfile(auth);
+
 
     const navigate = useNavigate()
 
     if (user) {
-        navigate('/')
         console.log(user);
+        navigate('/cart')
     }
     if (loading) {
         return <div class="spinner-border text-primary" role="status">
@@ -30,9 +33,10 @@ const Signup = () => {
 
 
     let customError;
-    const submitForm = (e) => {
 
+    const submitForm = async (e) => {
         e.preventDefault()
+        const name = e.target.name.value
         const email = e.target.email.value
         const password = e.target.password.value
         const confirmPassword = e.target.ConfirmPassword.value
@@ -41,10 +45,12 @@ const Signup = () => {
             customError = 'password did not match'
             return
         }
-        createUserWithEmailAndPassword(email, password)
+        await updateProfile({ displayName: name })
+        // sendEmailVerification(email)
+        await createUserWithEmailAndPassword(email, password)
 
         console.log('user created');
-        console.log(confirmPassword, password);
+
     }
 
 
@@ -69,6 +75,7 @@ const Signup = () => {
 
                 <input className='submit-btn' type="submit" value='Submit' />
                 <br />
+                <Link to={'/login'}>Already have an Account</Link>
             </form>
         </div>
     );

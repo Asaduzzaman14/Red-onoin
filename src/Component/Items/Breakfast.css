@@ -10,3 +10,8 @@
     font-weight: 600;
 
 }
+
+.food-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}

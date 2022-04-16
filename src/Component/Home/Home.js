@@ -1,8 +1,15 @@
-import Items from '../Items/Items';
+import { Link } from 'react-router-dom';
+import Items from '../Items/Breakfast';
 import './Home.css'
 
-const Home = () => {
+import {
+    Routes,
+    Route,
 
+    Outlet,
+} from "react-router-dom";
+import CustomerReview from '../CustomerReview/CustomerReview';
+const Home = () => {
     return (
 
         <>
@@ -15,10 +22,19 @@ const Home = () => {
                             <button class="btn " type="button" >Search</button>
                         </div>
                     </div>
-
                 </div>
             </div>
-            <Items></Items>
+            <div className='menu'>
+                <Link to={'/breakfast'}>Breakfast</Link>
+                <Link to={'/lunch'}>Lunch</Link>
+                <Link to={'/dinner'}>Dinner</Link>
+            </div>
+
+            <div>
+                <Outlet></Outlet>
+                <CustomerReview></CustomerReview>
+
+            </div>
         </>
     );
 };

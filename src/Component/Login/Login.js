@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import logo from '../../image/images/logo2.png'
 import './Login.css'
@@ -51,6 +52,7 @@ const Login = () => {
                 <p className='text-danger'>{error ? error.message : ''}</p>
                 <input className='submit-btn' type="submit" value='Login' />
                 <br />
+                <Link to={'/signup'}>Create An Account</Link>
 
             </form>
         </div>
