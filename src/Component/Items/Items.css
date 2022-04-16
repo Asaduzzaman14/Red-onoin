@@ -1,0 +1,12 @@
+.menu {
+    margin: 50px 0 40px 0;
+    ;
+}
+
+.menu a {
+    color: rgb(67, 59, 59);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+
+}

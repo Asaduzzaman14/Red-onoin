@@ -1,11 +1,11 @@
 import React from 'react';
 
-const HeaderDisplay = () => {
+const Cart = () => {
     return (
         <div>
-
+            <h2>This is cart </h2>
         </div>
     );
 };
 
-export default HeaderDisplay;
+export default Cart;

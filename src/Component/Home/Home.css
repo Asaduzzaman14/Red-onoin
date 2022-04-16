@@ -3,14 +3,14 @@
 }
 
 .display {
-    background-image: url(../../image/images/bannerbackground.png);
+    background-image: url(../../image/images/bannerbackground\ \(1\).png);
     height: 80vh;
     position: relative;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     width: 100%;
-    object-fit: cover;
+
 
 }
 
